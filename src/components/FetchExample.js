@@ -7,7 +7,6 @@ class FetchExample extends Component {
   }
 
   componentDidMount(){
-        // this function return a promise 
         fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
           .then(res => res.json())
           .then(data => {
