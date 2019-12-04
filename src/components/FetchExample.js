@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class FetchExample extends Component {
 
-  // i add un empty state
   state = {
     bpi: {}
   }
+
   componentDidMount(){
         // this function return a promise 
         fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
