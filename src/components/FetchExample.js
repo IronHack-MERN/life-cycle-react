@@ -7,28 +7,24 @@ class FetchExample extends Component {
     bpi: {}
   }
   componentDidMount(){
-        // this function return a promisse devuelve una promesa
+        // this function return a promise 
         fetch('https://api.coindesk.com/v1/bpi/currentprice.json')
           .then(res => res.json())
           .then(data => {
-            // console.log(data)
             const { bpi } = data;
             this.setState({ bpi } )
           }) 
     }
 
     _renderCurrencies(){
-      console.log(this.state.bpi)
       const { bpi } = this.state;
-      return Object.keys(bpi) // ['EUR', 'GBP', 'USD']
-        .map( actual => {
-          return(
-            <div key={actual}>
-              1 Bitcoin is {bpi[actual].rate}
-              <span>{actual}</span>
-            </div>
-          )
-        })
+      const currencies = Object.keys(bpi) // ['EUR', 'GBP', 'USD']
+      return currencies.map( actual => (
+        <div key={actual}>
+          1 Bitcoin is {bpi[actual].rate}
+          <span>{actual}</span>
+        </div>
+      ))
     }
 
     render() {
