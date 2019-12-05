@@ -36,9 +36,9 @@ AnimalImage.propTypes = {
 class Update extends Component {
     state = { animal: 'panda' }
 
-    _renderAnimalButton(animal){
+    _renderAnimalButton = (animal) => {
       return(
-        <button onClick = { () => this.setState({ animal }) }>
+        <button key={animal} onClick = { () => this.setState({ animal }) }>
           {animal}
         </button>
       )
@@ -48,9 +48,7 @@ class Update extends Component {
       return (
         <div>
           <h4>ComponentWillReceiveProps</h4>
-          {this._renderAnimalButton('panda')}
-          {this._renderAnimalButton('cat')}
-          {this._renderAnimalButton('dolphin')}
+          {Object.keys(ANIMALS_IMG).map(this._renderAnimalButton) }
           
           <AnimalImage
             animal = {this.state.animal}
