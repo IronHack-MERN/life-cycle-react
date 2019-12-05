@@ -5,8 +5,9 @@ const ANIMALS_IMG = {
   panda: 'https://goo.gl/oNbtoq',
   cat: 'https://goo.gl/PoQQXb',
   dolphin: 'https://goo.gl/BbiKCd' 
-  
 }
+
+const ANIMALS = Object.keys(ANIMALS_IMG);
 
 class AnimalImage extends Component {
   state = { src: ANIMALS_IMG[this.props.animal] }
@@ -31,7 +32,7 @@ class AnimalImage extends Component {
 }
 
 AnimalImage.propTypes = {
-  animal: PropTypes.oneOf( Object.keys(ANIMALS_IMG))
+  animal: PropTypes.oneOf( ANIMALS )
 }
 
 class Update extends Component {
@@ -52,7 +53,7 @@ class Update extends Component {
       return (
         <div>
           <h4>ComponentWillReceiveProps</h4>
-          {Object.keys(ANIMALS_IMG).map(this._renderAnimalButton) }
+          { ANIMALS.map(this._renderAnimalButton) }
 
           <AnimalImage
             animal = {this.state.animal}
