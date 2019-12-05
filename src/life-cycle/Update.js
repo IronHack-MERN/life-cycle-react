@@ -33,12 +33,6 @@ AnimalImage.propTypes = {
   animal: PropTypes.oneOf( ['cat', 'dophin', 'panda'])
 }
 
-AnimalImage.defaultProps = {
-  // So that the component does not stop working 
-  // if the image does not exist, we add one by default
-  animal: 'panda'
-}
-
 class Update extends Component {
     state = { animal: 'panda' }
     render() {
