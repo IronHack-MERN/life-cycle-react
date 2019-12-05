@@ -39,7 +39,10 @@ class Update extends Component {
 
     _renderAnimalButton = (animal) => {
       return(
-        <button key={animal} onClick = { () => this.setState({ animal }) }>
+        <button 
+          disabled={animal === this.state.animal}
+          key={animal} 
+          onClick = { () => this.setState({ animal }) }>
           {animal}
         </button>
       )
