@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const ANIMALS_IMG = {
+  panda: 'https://goo.gl/oNbtoq',
   cat: 'https://goo.gl/PoQQXb',
-  dolphin: 'https://goo.gl/BbiKCd',
-  panda: 'https://goo.gl/oNbtoq'
+  dolphin: 'https://goo.gl/BbiKCd' 
+  
 }
 
 class AnimalImage extends Component {
@@ -30,7 +31,7 @@ class AnimalImage extends Component {
 }
 
 AnimalImage.propTypes = {
-  animal: PropTypes.oneOf( ['cat', 'dophin', 'panda'])
+  animal: PropTypes.oneOf( Object.keys(ANIMALS_IMG))
 }
 
 class Update extends Component {
@@ -49,7 +50,7 @@ class Update extends Component {
         <div>
           <h4>ComponentWillReceiveProps</h4>
           {Object.keys(ANIMALS_IMG).map(this._renderAnimalButton) }
-          
+
           <AnimalImage
             animal = {this.state.animal}
           />
