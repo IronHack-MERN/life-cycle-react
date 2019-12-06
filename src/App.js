@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import UpdateC from './life-cycle/UpdateC';
+import ComponentWillUnmount from './life-cycle/ComponentWillUnmount';
 
 function App() {
   return (
     <div className="App">
-      <UpdateC />
+      <ComponentWillUnmount />
     </div>
   );
 }
