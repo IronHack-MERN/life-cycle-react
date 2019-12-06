@@ -1,4 +1,4 @@
-import React, { Component, PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 const ANIMALS_IMG = {
@@ -9,7 +9,7 @@ const ANIMALS_IMG = {
 
 const ANIMALS = Object.keys(ANIMALS_IMG);
 
-class AnimalImage extends PureComponent {
+class AnimalImage extends Component {
   state = { src: ANIMALS_IMG[this.props.animal] }
 
   componentWillReceiveProps (nextProps){ 
@@ -38,10 +38,28 @@ class AnimalImage extends PureComponent {
         { filter: 'blur(2px)' }
       ],
       {
-        duration: 1500,
+        duration: 500,
         easing: 'ease'
       }
     )
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    console.log('4. componentDidUpdate');
+    const img = document.querySelector('img');
+
+        // web animations api
+        img.animate(
+          [
+            { filter: 'blur(0px)' },
+            { filter: 'blur(2px)' }
+          ],
+          {
+            duration: 1500,
+            easing: 'ease'
+          }
+        )
+    console.log('from img element', { alt: img.alt });
   }
 
   render() {
