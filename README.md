@@ -1,4 +1,4 @@
-# fetch-api-bitcoins
+# Life Cycle in REACT
 
 ## Available Scripts
 
