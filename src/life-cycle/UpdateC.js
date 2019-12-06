@@ -31,13 +31,21 @@ class AnimalImage extends PureComponent {
     // y logamos el atributo alt de la imagen
     const img = document.querySelector('img')
     console.log('from img element', { alt:img.alt } );
-
-
+    // web animations api
+    img.animate(
+      [
+        { filter: 'blur(0px)' },
+        { filter: 'blur(2px)' }
+      ],
+      {
+        duration: 1500,
+        easing: 'ease'
+      }
+    )
   }
 
   render() {
     console.log('-> render');
-
     return(
       <div>
         <p>Selected {this.props.animal}</p>
