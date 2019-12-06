@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import ComponentDidCatch from './life-cycle/ComponentDidCatch';
+import BitCoinPriceContainer from './patron-contenedor-contenido/Contenedor';
 
 function App() {
   return (
     <div className="App">
-      <ComponentDidCatch />
+      <BitCoinPriceContainer />
     </div>
   );
 }

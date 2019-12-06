@@ -1,26 +1,22 @@
 import React, { Component } from "react";
 
-class BitCoinPrice extends Component {
+const _renderCurrencies = bpi =>
+  Object.keys(bpi).map(actual => (
+    <div key={actual}>
+      1 Bitcoin is {bpi[actual].rate}
+      <span>{bpi[actual].code}</span>
+    </div>
+  ));
 
-  _renderCurrencies() {
-    const { bpi } = this.props;
+function BitCoinPrice(props) {
+  const { bpi } = props;
 
-    return Object.keys(bpi).map(actual => (
-      <div key={actual}>
-        1 Bitcoin is {bpi[actual].rate}
-        <span>{bpi[actual].code}</span>
-      </div>
-    ));
-  }
-
-  render() {
-    return (
-      <div>
-        <h4>Bitcoin price - Index </h4>
-        {this._renderCurrencies()}
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h4>Bitcoin Price</h4>
+      {_renderCurrencies(bpi)}
+    </div>
+  );
 }
 
 export default BitCoinPrice;
