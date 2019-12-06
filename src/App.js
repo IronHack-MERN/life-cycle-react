@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import ComponentWillUnmount from './life-cycle/ComponentWillUnmount';
+import ComponentDidCatch from './life-cycle/ComponentDidCatch';
 
 function App() {
   return (
     <div className="App">
-      <ComponentWillUnmount />
+      <ComponentDidCatch />
     </div>
   );
 }
