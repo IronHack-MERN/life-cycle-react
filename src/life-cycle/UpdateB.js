@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PureComponent } from 'react';
 import PropTypes from 'prop-types';
 
 const ANIMALS_IMG = {
@@ -9,7 +9,7 @@ const ANIMALS_IMG = {
 
 const ANIMALS = Object.keys(ANIMALS_IMG);
 
-class AnimalImage extends Component {
+class AnimalImage extends PureComponent {
   state = { src: ANIMALS_IMG[this.props.animal] }
 
   componentWillReceiveProps (nextProps){ 
@@ -18,16 +18,13 @@ class AnimalImage extends Component {
     this.setState({ src: ANIMALS_IMG[nextProps.animal] })
   }
 
-  shouldComponentUpdate(nextProps){
-    // con el shouldComponentUpdate evitamos el ciclo de actualización
-    // este método es muy importante para una buena experiencia de usuario
-    // así no renderizamos la página cuando no hace falta
-    console.log('2-> shouldComponetUpdate');
-    console.log('anterior: ', this.props.animal);
-    console.log('nuevo: ', nextProps.animal);
-
-    return this.props.animal !== nextProps.animal;
-  }
+  // shouldComponentUpdate(nextProps){
+  //   // con el shouldComponentUpdate evitamos el ciclo de actualización
+  //   // este método es muy importante para una buena experiencia de usuario
+  //   // así no renderizamos la página cuando no hace falta
+  //   console.log('2-> shouldComponetUpdate');
+  //   return this.props.animal !== nextProps.animal;
+  // }
 
   render() {
     console.log('1-> al montar / Pero 3-> al actualziar | render');
