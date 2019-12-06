@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
 import FetchExample from './components/FetchExample';
-import Update from './life-cycle/Update';
+import UpdateB from './life-cycle/UpdateB';
 
 function App() {
   return (
     <div className="App">
       {/* <FetchExample/> */}
-      <Update />
+      <UpdateB />
     </div>
   );
 }
